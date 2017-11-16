@@ -1,3 +1,4 @@
-export default (message) => {
+export default message => {
   console.log(message);
-}
+  alert('hohoo');
+};

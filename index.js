@@ -4,7 +4,7 @@
 const browserSync = require('browser-sync').create();
 const webpack = require('webpack');
 const webpackDevMiddleware = require('webpack-dev-middleware');
-//const webpackHotMiddleware = require('webpack-hot-middleware');
+const webpackHotMiddleware = require('webpack-hot-middleware');
 
 /**
  * Require ./webpack.config.js and make a bundler from it
@@ -35,14 +35,14 @@ browserSync.init({
       }),
 
       // bundler should be the same as above
-      //webpackHotMiddleware(bundler)
+      webpackHotMiddleware(bundler)
     ]
   },
 
   // no need to watch '*.js' here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
   files: [
-    'dist/**.html',
-    'dist/**.php'
+    'dist/**/**.html',
+    'dist/**/**.php',
   ]
 });
