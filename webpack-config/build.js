@@ -1,8 +1,13 @@
+const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MinifyPlugin = require("babel-minify-webpack-plugin");
+const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
+  output: {
+    filename: '[name].[chunkhash:8].js'
+  },
   module: {
     rules: [
       {
@@ -24,12 +29,13 @@ module.exports = {
     ]
   },
   plugins: [
-    new ExtractTextPlugin("css/styles.css"),
+    new ExtractTextPlugin('[name].[contenthash:8].css'),
     new ImageminPlugin({
       pngquant: {
         quality: '95-100'
       }
     }),
-    new MinifyPlugin()
+    new ManifestPlugin(),
+    new MinifyPlugin(),
   ]
 };

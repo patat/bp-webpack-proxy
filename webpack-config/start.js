@@ -6,6 +6,9 @@ module.exports = {
     'webpack/hot/dev-server',
     'webpack-hot-middleware/client',
   ],
+  output: {
+    filename: '[name].js'
+  },
   module: {
     rules: [
       {
