@@ -35,14 +35,16 @@ browserSync.init({
       }),
 
       // bundler should be the same as above
-      webpackHotMiddleware(bundler)
+      //webpackHotMiddleware(bundler)
     ]
   },
 
   // no need to watch '*.js' here, webpack will take care of it for us,
   // including full page reloads if HMR won't work
   files: [
-    'dist/**/**.html',
-    'dist/**/**.php',
+    '**/**.html',
+    '**/**.php',
+    'dist/**/**.js',
+    'dist/**/**.css',
   ]
 });

@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
 const ImageminPlugin = require('imagemin-webpack-plugin').default;
 const MinifyPlugin = require("babel-minify-webpack-plugin");
-const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
   output: {
@@ -35,7 +34,6 @@ module.exports = {
         quality: '95-100'
       }
     }),
-    new ManifestPlugin(),
     new MinifyPlugin(),
   ]
 };

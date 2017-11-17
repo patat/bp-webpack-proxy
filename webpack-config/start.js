@@ -25,6 +25,6 @@ module.exports = {
     new webpack.LoaderOptionsPlugin({
       debug: true
     }),
-    new webpack.HotModuleReplacementPlugin()
+    //new webpack.HotModuleReplacementPlugin()
   ]
 };
