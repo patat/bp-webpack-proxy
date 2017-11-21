@@ -17,7 +17,7 @@
   </head>
   <body>
     <?php  ?>
-    <?php echo "<p>Hi There!!!</p>"; ?>
+    <?php echo "<p>Hi There!!!!!</p>"; ?>
     <script src="<?php echo 'dist/' . $manifest['main.js']; ?>"></script>
   </body>
 </html>

@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 
 module.exports = {
   watch: true,
@@ -26,5 +27,20 @@ module.exports = {
       debug: true
     }),
     //new webpack.HotModuleReplacementPlugin()
+    new BrowserSyncPlugin(
+      // BrowserSync options 
+      {
+        // browse to http://localhost:3000/ during development 
+        host: 'localhost',
+        port: 3000,
+        // proxy any server here
+        proxy: 'http://localhost:8888/'
+      },
+      // plugin options 
+      {
+        // watch for file changes and reload the page
+        reload: true
+      }
+    )
   ]
 };

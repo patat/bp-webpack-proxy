@@ -1,5 +1,4 @@
 const path = require('path');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ManifestPlugin = require('webpack-manifest-plugin');
 
 module.exports = {
@@ -8,7 +7,7 @@ module.exports = {
   ],
   output: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: '/dist'
+    publicPath: '/dist/'
   },
   module: {
     rules: [
@@ -49,15 +48,7 @@ module.exports = {
     ]
   },
   plugins: [
-    // new CopyWebpackPlugin([
-    //   {
-    //     from: path.resolve(__dirname, '../public'),
-    //     to: path.resolve(__dirname, '../dist')
-    //   }
-    // ], {
-    //   copyUnmodified: true
-    // }),
     new ManifestPlugin(),
-    // TODO: https://github.com/gajus/write-file-webpack-plugin
+    // TODO: https://github.com/gajus/write-file-webpack-plugin for manifest
   ]
 };
